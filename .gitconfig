@@ -1,0 +1,16 @@
+[user]
+	email = dpashutskii@gmail.com
+	name = Dmitrii Pashutskii
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	excludesfile = /Users/guar47/.gitignore_global
+[alias]
+	st = status
+	c = "!git add -A && git commit -m "
+	amend = !git add -A && git commit --amend --no-edit
+	p = !git push origin $(git rev-parse --abbrev-ref HEAD)
+	n = !git checkout -b
